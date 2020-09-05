@@ -219,6 +219,8 @@ class Ijk(private val registry: PluginRegistry.Registrar, private val options: M
         val width = mediaPlayer.videoWidth
         val height = mediaPlayer.videoHeight
         val outputFps = mediaPlayer.videoOutputFramesPerSecond
+        val darNum = mediaPlayer.videoDarNum
+        val darDen = mediaPlayer.videoDarDen
         return Info(
                 duration = duration.toDouble() / 1000,
                 currentPosition = currentPosition.toDouble() / 1000,
@@ -227,7 +229,9 @@ class Ijk(private val registry: PluginRegistry.Registrar, private val options: M
                 isPlaying = textureMediaPlayer.isPlaying,
                 degree = degree,
                 tcpSpeed = mediaPlayer.tcpSpeed,
-                outputFps = outputFps
+                outputFps = outputFps,
+                darNum = darNum,
+                darDen = darDen
 //                decodeFps = mediaPlayer.videoDecodeFramesPerSecond
         )
     }

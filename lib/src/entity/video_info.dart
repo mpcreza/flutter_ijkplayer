@@ -23,6 +23,10 @@ class VideoInfo {
   /// The media tcp speed, unit is byte
   int tcpSpeed;
 
+  int darNum;
+
+  int darDen;
+
   Map<String, dynamic> _map;
 
   /// Percentage playback progress
@@ -47,6 +51,22 @@ class VideoInfo {
     return r;
   }
 
+  /// Original aspect ratio
+  double get originalRatio {
+    double r;
+    if (darNum != null && darDen != null) {
+      if (darNum == 0 || darDen == 0) {
+        r = 1280 / 720;
+      } else {
+        r = darNum / darDen;
+      }
+    } else {
+      r = 1280 / 720;
+    }
+
+    return r;
+  }
+
   /// Constructing from the native method
   VideoInfo.fromMap(Map<String, dynamic> map) {
     if (map == null) {
@@ -60,6 +80,8 @@ class VideoInfo {
     this.isPlaying = map["isPlaying"];
     this.degree = map["degree"];
     this.tcpSpeed = map["tcpSpeed"];
+    this.darNum = map["darNum"];
+    this.darDen = map["darDen"];
   }
 
   @override

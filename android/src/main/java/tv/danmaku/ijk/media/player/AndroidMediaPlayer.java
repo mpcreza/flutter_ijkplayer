@@ -212,6 +212,16 @@ public class AndroidMediaPlayer extends AbstractMediaPlayer {
     }
 
     @Override
+    public int getVideoDarNum() {
+        return 1;
+    }
+
+    @Override
+    public int getVideoDarDen() {
+        return 1;
+    }
+
+    @Override
     public boolean isPlaying() {
         try {
             return mInternalMediaPlayer.isPlaying();

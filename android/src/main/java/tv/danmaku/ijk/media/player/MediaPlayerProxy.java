@@ -318,6 +318,16 @@ public class MediaPlayerProxy implements IMediaPlayer {
     }
 
     @Override
+    public int getVideoDarNum() {
+        return mBackEndMediaPlayer.getVideoSarNum();
+    }
+
+    @Override
+    public int getVideoDarDen() {
+        return mBackEndMediaPlayer.getVideoDarDen();
+    }
+
+    @Override
     public void setWakeMode(Context context, int mode) {
         mBackEndMediaPlayer.setWakeMode(context, mode);
     }

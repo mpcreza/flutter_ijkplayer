@@ -9,7 +9,9 @@ data class Info(
         val isPlaying: Boolean,
         val degree: Int = 0,
         val tcpSpeed: Long = 0,
-        val outputFps: Float = 0f
+        val outputFps: Float = 0f,
+        val darNum: Int = 0,
+        val darDen: Int = 0
 //        val decodeFps: Float = 0f
 ) {
 
@@ -23,6 +25,8 @@ data class Info(
         map["degree"] = degree
         map["tcpSpeed"] = tcpSpeed
         map["outputFps"] = outputFps
+        map["darNum"] = darNum
+        map["darDen"] = darDen
 //        map["decodeFps"] = decodeFps
         return map
     }
